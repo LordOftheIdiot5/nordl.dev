@@ -457,7 +457,10 @@ body {
   box-shadow: 0 28px 72px -32px color-mix(in srgb, var(--accent) 32%, rgba(0, 0, 0, 0.9));
 }
 
-/* Alternate which side the image sits on, so two rows do not read as a list. */
+/* Alternate which side the image sits on, so two rows do not read as a list.
+   The column ratio has to flip with it: order moves the element but not the
+   track it lands in, so without this the image gets the narrower side. */
+.feature.reversed { grid-template-columns: 1fr 1.15fr; }
 .feature.reversed .feature-media { order: 2; }
 .feature.reversed .feature-copy { order: 1; }
 
