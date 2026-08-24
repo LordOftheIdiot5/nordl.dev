@@ -484,7 +484,11 @@ body {
 }
 
 @media (max-width: 780px) {
-  .feature {
+  /* .feature.reversed sets its own columns at higher specificity, so the
+     single-column override has to match it or the reversed row stays split -
+     which squeezed the screenshot into a 124px track on a phone. */
+  .feature,
+  .feature.reversed {
     grid-template-columns: 1fr;
     gap: 18px;
   }
