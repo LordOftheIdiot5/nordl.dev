@@ -321,3 +321,78 @@ body {
   font-size: 0.86em;
   color: var(--ink);
 }
+
+/* --- who / currently --- */
+
+.intro { max-width: none; }
+
+.who {
+  max-width: 62ch;
+  margin: 0 0 14px;
+}
+
+.now {
+  margin: 22px 0 0;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.now-label {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--edge-lit);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+/* --- concepts: present, deliberately quiet --- */
+
+.concepts {
+  margin-top: 48px;
+  padding-top: 26px;
+  border-top: 1px solid var(--edge);
+}
+
+.concepts-title {
+  margin: 0 0 4px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.concepts-note {
+  margin: 0 0 14px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.concepts-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.concepts-list li {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.concepts-list a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--edge-lit);
+}
+
+.concepts-list a:hover { color: var(--accent); }
