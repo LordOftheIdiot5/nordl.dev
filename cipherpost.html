@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CipherPost — nordl.dev</title>
+  <meta name="description" content="Local-first encrypted messaging and client workspaces, built on Signal's libsignal.">
+  <meta property="og:title" content="CipherPost — encrypted client workspaces">
+  <meta property="og:description" content="Local-first encryption on Signal's own libsignal. Plaintext, keys and history never leave the device.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nordl.dev/cipherpost.html">
+  <meta property="og:image" content="https://nordl.dev/img/cipherpost.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nordl.dev/img/cipherpost.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%233ee0c5' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="masthead">
+      <a class="wordmark" href="/">nordl<span>.dev</span></a>
+      <nav class="links">
+        <a href="/">← All projects</a>
+      </nav>
+    </header>
+
+    <article class="case">
+      <p class="case-kicker">Case study · Private beta</p>
+      <h1>CipherPost</h1>
+      <p class="case-line">Messages that stay on your device.</p>
+
+      <div class="case-split">
+        <div class="case-split-copy">
+          <p class="case-body">
+            Encrypted messaging, calling and client workspaces where the encryption is
+            not a marketing line. The protocol is Signal's own
+            <span class="mono-inline">libsignal</span> — PQXDH and the Double Ratchet
+            run in the official library, and the Dart layer never implements either.
+            Rolling your own is where most "secure" messengers fail, so it does not.
+          </p>
+          <p class="case-body">
+            The relay is deliberately not a message database. It holds bounded,
+            temporary ciphertext, prekey bundles, delivery state and content-free wake
+            endpoints. Plaintext, attachments, private keys, ratchets and history live
+            on the device and never reach it — so there is no server-side archive to
+            subpoena, breach or lose.
+          </p>
+          <ul class="project-meta case-meta">
+            <li>Flutter</li>
+            <li>libsignal 0.94.1</li>
+            <li>PQXDH</li>
+            <li>Double Ratchet</li>
+            <li>Local-first</li>
+          </ul>
+        </div>
+        <figure class="case-phone">
+          <picture>
+            <source srcset="img/cipherpost.webp" type="image/webp">
+            <img src="img/cipherpost.png" alt="CipherPost on Android: a dark interface introducing secure client workspaces, with client invites, recovery phrase, PIN lockout and strict privacy mode" width="560" height="1305">
+          </picture>
+        </figure>
+      </div>
+
+      <h2>Where it actually is</h2>
+      <p class="case-body">
+        Android security beta — ready for controlled tester builds, not public
+        production. Android protocol v3 uses the libsignal adapter over a dedicated
+        method channel. iOS, desktop and web deliberately <em>fail closed</em> for new
+        v3 contacts rather than falling back to something weaker, which is the right
+        failure mode and an inconvenient one. Physical-device testing and a
+        distribution review are still outstanding.
+      </p>
+      <p class="case-body">
+        Saying that plainly matters more here than anywhere else on this site. A
+        security product that overstates its readiness is worse than one that admits
+        what is unfinished, because the claim is the thing people rely on.
+      </p>
+
+      <p class="case-actions">
+        <span class="case-note">Source is private while the beta is closed.</span>
+        <a class="contact-alt" href="/">← Back to all projects</a>
+      </p>
+    </article>
+
+    <footer class="foot">
+      <p>
+        Built in the open.
+        <a href="https://github.com/LordOftheIdiot5" target="_blank" rel="noopener noreferrer">github.com/LordOftheIdiot5</a>
+        · <a href="mailto:Loticoins@proton.me">Loticoins@proton.me</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
