@@ -396,3 +396,23 @@ body {
 }
 
 .concepts-list a:hover { color: var(--accent); }
+
+.services-availability {
+  margin: 24px 0 0;
+  max-width: 56ch;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* The badge is real chain state, fetched at deploy time rather than by script
+   in the browser. Sized to the card so it reads as part of it. */
+.pulse-badge {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--edge);
+  background: #070b16;
+}
