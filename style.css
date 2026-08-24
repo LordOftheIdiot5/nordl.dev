@@ -491,3 +491,11 @@ body {
   .feature.reversed .feature-media { order: 1; }
   .feature.reversed .feature-copy { order: 2; }
 }
+
+/* <picture> is inline by default, so an img inside it sizing to 100% resolves
+   against a shrink-to-fit box rather than the column. On a narrow screen that
+   collapsed the screenshot to 124px. */
+.feature-media picture {
+  display: block;
+  width: 100%;
+}
