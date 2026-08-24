@@ -416,3 +416,15 @@ body {
   border: 1px solid var(--edge);
   background: #070b16;
 }
+
+/* Screenshots sit flush at the top of a card, so the card reads as a window
+   onto the thing rather than a paragraph with a picture stuck under it. */
+.shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--edge);
+  background: #0b1120;
+}
