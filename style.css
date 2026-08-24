@@ -301,3 +301,13 @@ body {
 
 .contact-button:hover { transform: translateY(-1px); filter: brightness(1.06); }
 .contact-button:active { transform: translateY(0); }
+
+.contact-alt {
+  margin-left: 16px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.contact-alt:hover { color: var(--accent); }
