@@ -446,6 +446,7 @@ body {
 
 .case {
   max-width: 760px;
+  margin: 0 auto;
   padding: 60px 0 20px;
 }
 
