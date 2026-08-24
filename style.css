@@ -489,11 +489,15 @@ body {
   color: var(--ink);
 }
 
-/* Break out of the text column so the screenshot is actually legible. */
+/* Break out of the text column so the screenshot is actually legible. The
+   width alone is not enough: without re-centring, a figure wider than its
+   column simply runs off the right edge and the page scrolls sideways. */
 .case-figure {
   margin: 32px 0;
   width: min(1040px, calc(100vw - 40px));
   max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .case-figure img {
