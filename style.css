@@ -111,6 +111,7 @@ body {
 
 .projects {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
@@ -429,72 +430,7 @@ body {
 }
 
 
-/* --- feature rows ---------------------------------------------------------
-   A dashboard screenshot at 246px wide is unreadable, which is what the old
-   three-column grid produced. Anything with a visual gets the full width and
-   roughly half of it for the image. */
 
-.feature {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 26px;
-  align-items: center;
-  padding: 24px;
-  border-radius: 22px;
-  border: 1px solid var(--edge);
-  background: var(--shell);
-  backdrop-filter: blur(20px) saturate(150%);
-  box-shadow: 0 20px 60px -32px rgba(0, 0, 0, 0.9);
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-
-.feature:hover {
-  border-color: var(--edge-lit);
-  transform: translateY(-3px);
-  box-shadow: 0 28px 72px -32px color-mix(in srgb, var(--accent) 32%, rgba(0, 0, 0, 0.9));
-}
-
-/* Alternate which side the image sits on, so two rows do not read as a list.
-   The column ratio has to flip with it: order moves the element but not the
-   track it lands in, so without this the image gets the narrower side. */
-.feature.reversed { grid-template-columns: 1fr 1.15fr; }
-.feature.reversed .feature-media { order: 2; }
-.feature.reversed .feature-copy { order: 1; }
-
-.feature-media { min-width: 0; }
-.feature-copy { min-width: 0; }
-
-.feature .shot,
-.feature .pulse-badge {
-  margin: 0;
-  width: 100%;
-  height: auto;
-}
-
-.feature .project-body { margin-bottom: 0; }
-
-/* The two without visuals stay compact and side by side. */
-.project-pair {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-@media (max-width: 780px) {
-  /* .feature.reversed sets its own columns at higher specificity, so the
-     single-column override has to match it or the reversed row stays split -
-     which squeezed the screenshot into a 124px track on a phone. */
-  .feature,
-  .feature.reversed {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .feature.reversed .feature-media { order: 1; }
-  .feature.reversed .feature-copy { order: 2; }
-}
 
 /* <picture> is inline by default, so an img inside it sizing to 100% resolves
    against a shrink-to-fit box rather than the column. On a narrow screen that
@@ -502,4 +438,120 @@ body {
 .feature-media picture {
   display: block;
   width: 100%;
+}
+
+/* --- case study page -------------------------------------------------------
+   A detail page exists so the screenshot has room. On the card grid it rendered
+   at a fifth of its size and read as noise; here it gets the full column. */
+
+.case {
+  max-width: 760px;
+  padding: 60px 0 20px;
+}
+
+.case-kicker {
+  margin: 0 0 12px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.case h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.case-line {
+  margin: 0 0 28px;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.015em;
+}
+
+.case-body {
+  margin: 0 0 22px;
+  font-size: 1rem;
+  line-height: 1.68;
+  color: var(--muted);
+}
+
+.case h2 {
+  margin: 38px 0 14px;
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* Break out of the text column so the screenshot is actually legible. */
+.case-figure {
+  margin: 32px 0;
+  width: min(1040px, calc(100vw - 40px));
+  max-width: none;
+}
+
+.case-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--edge);
+  box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.95);
+  background: #0b1120;
+}
+
+.case-figure picture { display: block; width: 100%; }
+
+.case-figure figcaption {
+  margin-top: 12px;
+  max-width: 70ch;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.case-list {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.case-list li {
+  padding-left: 18px;
+  position: relative;
+  font-size: 0.96rem;
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+.case-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.case-list strong { color: var(--ink); font-weight: 600; }
+
+.case-meta { margin-top: 26px; }
+
+.case-actions {
+  margin: 36px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }

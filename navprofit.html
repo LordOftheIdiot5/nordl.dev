@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>navprofit — nordl.dev</title>
+  <meta name="description" content="Maritime voyage intelligence: live AIS vessel tracking joined to bunker prices and voyage P&L.">
+  <meta property="og:title" content="navprofit — maritime voyage intelligence">
+  <meta property="og:description" content="Live AIS vessel tracking joined to bunker prices and voyage P&L, while the voyage is still running.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nordl.dev/navprofit.html">
+  <meta property="og:image" content="https://nordl.dev/img/navprofit.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nordl.dev/img/navprofit.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%233ee0c5' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="masthead">
+      <a class="wordmark" href="/">nordl<span>.dev</span></a>
+      <nav class="links">
+        <a href="/">← All projects</a>
+      </nav>
+    </header>
+
+    <article class="case">
+      <p class="case-kicker">Case study</p>
+      <h1>navprofit</h1>
+      <p class="case-line">Does this voyage actually make money?</p>
+
+      <p class="case-body">
+        Voyage economics are usually settled after the fact. Freight is agreed, fuel
+        is burned, port and agency costs land weeks later, and the margin is a
+        number someone works out once the voyage is already over. navprofit puts
+        that number on screen while the ship is still moving.
+      </p>
+
+      <figure class="case-figure">
+        <picture>
+          <source srcset="img/navprofit.webp" type="image/webp">
+          <img src="img/navprofit.png" alt="The navprofit overview: active voyage P&amp;L, average bunker cost per nautical mile, pending invoices and fleet size across the top; a live vessel map of the North Sea and Baltic below; and a per-voyage breakdown of route, cargo, distance, revenue, fuel, port costs and net P&amp;L on the right" width="1200" height="665">
+        </picture>
+        <figcaption>
+          The overview: fleet-wide P&amp;L across the top, live vessel positions from
+          AIS, and the cost breakdown for a single voyage on the right.
+        </figcaption>
+      </figure>
+
+      <h2>What it does</h2>
+      <ul class="case-list">
+        <li>
+          <strong>Live vessel positions.</strong> AIS streaming, so the fleet on the
+          map is where it actually is rather than where the last report said.
+        </li>
+        <li>
+          <strong>Bunker prices by port.</strong> VLSFO indications per port, joined
+          to the voyage so fuel cost is a live figure rather than an estimate.
+        </li>
+        <li>
+          <strong>Per-voyage P&amp;L.</strong> Revenue against fuel, port and agency
+          costs, with the margin and the cost-to-revenue split visible per leg.
+        </li>
+        <li>
+          <strong>Invoices and alerts.</strong> What is outstanding, what is paid,
+          and thresholds that fire when a margin drops or a price moves.
+        </li>
+      </ul>
+
+      <h2>How it is built</h2>
+      <p class="case-body">
+        A browser application with no server holding your data. API keys for AIS and
+        bunker pricing stay in the browser and talk to those services directly, so
+        there is no shared key, no shared quota, and nothing of yours sitting on
+        someone else's machine. Currency and home port are settings rather than
+        assumptions — it defaults to NOK and Bergen because that is where it was
+        written.
+      </p>
+
+      <ul class="project-meta case-meta">
+        <li>JavaScript</li>
+        <li>Live AIS</li>
+        <li>P&amp;L modelling</li>
+        <li>Leaflet</li>
+        <li>Bring your own keys</li>
+      </ul>
+
+      <p class="case-actions">
+        <a class="contact-button" href="https://github.com/LordOftheIdiot5/navprofit" target="_blank" rel="noopener noreferrer">View the source on GitHub</a>
+        <a class="contact-alt" href="/">← Back to all projects</a>
+      </p>
+    </article>
+
+    <footer class="foot">
+      <p>
+        Built in the open.
+        <a href="https://github.com/LordOftheIdiot5" target="_blank" rel="noopener noreferrer">github.com/LordOftheIdiot5</a>
+        · <a href="mailto:Loticoins@proton.me">Loticoins@proton.me</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
