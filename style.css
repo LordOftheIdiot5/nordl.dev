@@ -232,3 +232,72 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .aurora, .project { animation: none; }
 }
+
+/* --- services --- */
+
+.services {
+  margin-top: 56px;
+  padding: 30px 28px;
+  border-radius: 22px;
+  border: 1px solid var(--edge-lit);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
+    var(--shell);
+  backdrop-filter: blur(20px) saturate(150%);
+}
+
+.services-title {
+  margin: 0 0 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.services-lede {
+  margin: 0 0 26px;
+  max-width: 54ch;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.service h3 {
+  margin: 0 0 8px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+}
+
+.service p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.services-contact { margin: 28px 0 0; }
+
+.contact-button {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: #06231e;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 88%, #fff), var(--accent));
+  box-shadow: 0 12px 32px -14px color-mix(in srgb, var(--accent) 70%, transparent);
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.contact-button:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.contact-button:active { transform: translateY(0); }
