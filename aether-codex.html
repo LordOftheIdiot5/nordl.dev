@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether Codex — nordl.dev</title>
+  <meta name="description" content="A multi-agent framework where specialist agents read Solidity, write proof-of-concept exploits, and fuzz invariants.">
+  <meta property="og:title" content="Aether Codex — agents that read code looking for trouble">
+  <meta property="og:description" content="Specialist LangGraph agents for recon, vulnerability hunting, PoC exploits and invariant fuzzing.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nordl.dev/aether-codex.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%233ee0c5' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="masthead">
+      <a class="wordmark" href="/">nordl<span>.dev</span></a>
+      <nav class="links">
+        <a href="/">← All projects</a>
+      </nav>
+    </header>
+
+    <article class="case">
+      <p class="case-kicker">Case study</p>
+      <h1>Aether Codex</h1>
+      <p class="case-line">Agents that read code looking for trouble.</p>
+
+      <p class="case-body">
+        Reviewing an unfamiliar codebase is mostly a problem of attention. There is
+        more surface than anyone can hold at once, and the bugs that matter tend to
+        live where two assumptions meet rather than on any single line. Aether Codex
+        is an attempt to make that work systematic — a director agent that delegates
+        to specialists, each pointed at one kind of trouble.
+      </p>
+
+      <h2>The specialists</h2>
+      <ul class="case-list">
+        <li><strong>recon_agent</strong> — maps architecture, trust assumptions and the boundaries between them before anything else runs.</li>
+        <li><strong>vuln_hunter</strong> — reads the Solidity directly, hunting exploitable bugs rather than lint findings.</li>
+        <li><strong>invariant_hunter</strong> — proposes invariants and fuzzes them, which is where multi-step and compositional bugs surface.</li>
+        <li><strong>poc_writer</strong> — builds Foundry proof-of-concepts that have to compile and pass, so a finding is demonstrated rather than asserted.</li>
+        <li><strong>rug_screener</strong> — screens an address for honeypot and rug mechanics.</li>
+        <li><strong>wallet_auditor</strong> — for smart accounts: Safe, multisig, ERC-4337.</li>
+      </ul>
+
+      <h2>How it is put together</h2>
+      <p class="case-body">
+        Every agent is the same compiled LangGraph loop —
+        <span class="mono-inline">agent → tools → agent → … → END</span> — and
+        sub-agents run <em>inside</em> the director's delegate calls, which makes the
+        hierarchy real rather than a naming convention. The director can also spawn a
+        specialist that did not exist when the run started, and search a persistent
+        vector memory of what previous runs concluded.
+      </p>
+
+      <pre class="case-code"><code>            ┌──────────────────────┐
+Gradio UI ──▶│    CODEX DIRECTOR    │◀── CLI
+            └──────────┬───────────┘
+   delegate · delegate_many · spawn_agent · recall_memory
+                       │
+   ┌────────┬──────────┼──────────┬────────────┐
+   ▼        ▼          ▼          ▼            ▼
+ recon   vuln_     invariant_   poc_      (spawned at
+ _agent  hunter     hunter     writer      runtime…)
+                       │
+            ┌──────────┴───────────┐
+            │ ChromaDB vector store │
+            └──────────────────────┘</code></pre>
+
+      <h2>What makes it more than a prompt</h2>
+      <p class="case-body">
+        A library of <strong>90 reusable invariants</strong> — conservation of assets,
+        share supply accounting, withdrawal liquidity matching unclaimed requests — so
+        a fuzzing run starts from properties that have caught bugs before rather than
+        from a blank file. A fork lab with Foundry harnesses for testing against real
+        chain state, and a proof-of-concept workspace where an exploit has to actually
+        run.
+      </p>
+      <p class="case-body">
+        The part that matters most is the insistence on demonstration. An agent that
+        reports a finding is easy to build and mostly produces noise; one that has to
+        write a test proving the bug is a different tool entirely, because a
+        proof-of-concept that fails to compile is a finding that was never real.
+      </p>
+
+      <ul class="project-meta case-meta">
+        <li>Python</li>
+        <li>LangGraph</li>
+        <li>Foundry</li>
+        <li>ChromaDB</li>
+        <li>90 invariants</li>
+      </ul>
+
+      <p class="case-actions">
+        <a class="contact-button" href="https://github.com/LordOftheIdiot5/aether-codex" target="_blank" rel="noopener noreferrer">View the source on GitHub</a>
+        <a class="contact-alt" href="/">← Back to all projects</a>
+      </p>
+    </article>
+
+    <footer class="foot">
+      <p>
+        Built in the open.
+        <a href="https://github.com/LordOftheIdiot5" target="_blank" rel="noopener noreferrer">github.com/LordOftheIdiot5</a>
+        · <a href="mailto:Loticoins@proton.me">Loticoins@proton.me</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>

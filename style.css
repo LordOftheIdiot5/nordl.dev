@@ -610,3 +610,21 @@ body {
     max-width: 300px;
   }
 }
+
+/* An architecture diagram is the artefact here, so let it be one. */
+.case-code {
+  margin: 24px 0 28px;
+  padding: 20px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--edge);
+  background: rgba(0, 0, 0, 0.28);
+  overflow-x: auto;
+}
+
+.case-code code {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  line-height: 1.65;
+  color: var(--muted);
+  white-space: pre;
+}
