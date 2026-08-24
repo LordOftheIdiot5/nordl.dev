@@ -311,3 +311,13 @@ body {
 }
 
 .contact-alt:hover { color: var(--accent); }
+
+/* A project with no public source: present, clearly not clickable. */
+.project.private { cursor: default; }
+.project.private:hover { transform: none; }
+
+.mono-inline {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  color: var(--ink);
+}
