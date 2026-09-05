@@ -130,6 +130,8 @@ body {
 }
 
 .project:nth-child(2) { animation-delay: 0.08s; }
+.project:nth-child(3) { animation-delay: 0.16s; }
+.project:nth-child(4) { animation-delay: 0.24s; }
 
 .project.live:hover {
   border-color: var(--edge-lit);
@@ -208,8 +210,6 @@ body {
   border-radius: 8px;
   border: 1px solid var(--edge);
 }
-
-.placeholder { opacity: 0.62; }
 
 /* --- foot --- */
 
@@ -312,10 +312,6 @@ body {
 
 .contact-alt:hover { color: var(--accent); }
 
-/* A project with no public source: present, clearly not clickable. */
-.project.private { cursor: default; }
-.project.private:hover { transform: none; }
-
 .mono-inline {
   font-family: var(--mono);
   font-size: 0.86em;
@@ -403,41 +399,6 @@ body {
   font-size: 0.94rem;
   line-height: 1.6;
   color: var(--ink);
-}
-
-/* The badge is real chain state, fetched at deploy time rather than by script
-   in the browser. Sized to the card so it reads as part of it. */
-.pulse-badge {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0 0 16px;
-  border-radius: 12px;
-  border: 1px solid var(--edge);
-  background: #070b16;
-}
-
-/* Screenshots sit flush at the top of a card, so the card reads as a window
-   onto the thing rather than a paragraph with a picture stuck under it. */
-.shot {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0 0 16px;
-  border-radius: 12px;
-  border: 1px solid var(--edge);
-  background: #0b1120;
-}
-
-
-
-
-/* <picture> is inline by default, so an img inside it sizing to 100% resolves
-   against a shrink-to-fit box rather than the column. On a narrow screen that
-   collapsed the screenshot to 124px. */
-.feature-media picture {
-  display: block;
-  width: 100%;
 }
 
 /* --- case study page -------------------------------------------------------
