@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # The pulse badge is only as fresh as the last deploy, so deploy daily even
+  # when nothing is pushed. Without this a quiet week leaves the badge showing
+  # a beat that is no longer true.
+  schedule:
+    - cron: "17 6 * * *"
 
 permissions:
   contents: read
@@ -22,6 +27,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Regenerates pulse.svg from chain state so the badge the site serves is
+      # current. Allowed to fail: a free public RPC being down should not block
+      # publishing, and the committed pulse.svg stands in as the last known beat.
+      - name: Fetch the pulse badge
+        continue-on-error: true
+        run: node scripts/fetch-pulse.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
