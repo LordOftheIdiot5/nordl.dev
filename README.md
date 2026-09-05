@@ -21,7 +21,7 @@ other records a zone apex must carry.
 
 `pulse.svg` is generated on chain by `PulseRenderer`
 (`0x50bf16D32C4c8A4E8Fe4A3fD1bc0A5029F0b65a0` on Sepolia) and fetched at deploy
-time:
+time by the Pages workflow, so a push to `main` refreshes it:
 
     node scripts/fetch-pulse.js
 
