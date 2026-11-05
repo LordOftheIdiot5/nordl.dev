@@ -28,3 +28,7 @@ time:
 It carries real state without any client-side script, so the page stays static.
 Accurate as of the last deploy rather than the last second, which is the trade
 being made deliberately.
+
+## Google AdSense site ownership (nordl.dev)
+
+The public site includes the ownership verification meta tag and a root-level ads.txt file for ca-pub-8277014667878301. This does not load the Google ad-serving script, create an active ad slot, or mean that Google has approved the site. In the AdSense verification screen, choose Meta tag (or ads.txt snippet), not AdSense code snippet. Confirm the deployed homepage source and /ads.txt before requesting review. Ad serving requires site approval, updated privacy information and the required consent management setup.
