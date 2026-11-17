@@ -1,6 +1,10 @@
 name: Optional rendered layout audit
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/layout-audit.yml'
 permissions:
   contents: read
 jobs:
