@@ -1,0 +1,61 @@
+/* Nordl homepage only. Existing case studies retain style.css unchanged. */
+.nordl-home{--bg:#090f1a;--ink:#f4f7fc;--muted:#adbbcf;--shell:#111b2a;--edge:#25364c;--accent:#56dfc6;background:radial-gradient(ellipse at 75% 0%,#172b39 0,transparent 43%),var(--bg)}
+.nordl-home .page{width:min(1240px,calc(100% - 64px));padding:28px 0 64px}
+.nordl-home .masthead{padding:0 0 20px;border-bottom:1px solid var(--edge)}
+.nordl-home .wordmark{font-size:1.42rem;white-space:nowrap}
+.nordl-home .links{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.nordl-home .links a{font-family:var(--sans);font-size:.82rem}
+.nordl-hero{display:grid;grid-template-columns:minmax(0,1.17fr) minmax(0,.83fr);gap:48px;align-items:center;padding:70px 0 64px}
+.section-kicker{font:600 .7rem/1.5 var(--mono);letter-spacing:.12em;color:var(--accent);margin:0 0 14px}
+.signal-dot{display:inline-block;width:8px;height:8px;margin-right:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 15px #56dfc666}
+.nordl-hero h1{font-size:clamp(2.6rem,5.2vw,4.65rem);line-height:1.04;letter-spacing:-.055em;margin:0 0 22px}
+.nordl-hero h1 span{color:var(--accent)}
+.hero-description{font-size:1.08rem;line-height:1.75;color:var(--muted);max-width:49ch;margin:0 0 27px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.nordl-home .contact-button,.outline-button{border-radius:10px;padding:12px 18px;line-height:1.5;min-height:46px}
+.outline-button{display:inline-block;color:var(--ink);text-decoration:none;border:1px solid var(--edge);font-weight:600;font-size:.9rem}
+.outline-button:hover{border-color:var(--accent)}
+.hero-principles{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:24px;color:var(--muted);font-size:.72rem}
+.hero-principles span:before{content:"✓";color:var(--accent);margin-right:6px}
+.network-panel{border:1px solid var(--edge);border-radius:20px;padding:22px;background:linear-gradient(145deg,#122237,#0c1420);min-width:0}
+.network-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;font:600 .65rem var(--mono);letter-spacing:.06em;color:var(--muted)}
+.network-chip{letter-spacing:0;border:1px solid var(--edge);border-radius:6px;padding:5px 7px}
+.network-panel svg{display:block;width:100%;height:auto;margin:12px 0}
+.network-panel p{font-size:.78rem;color:var(--muted);line-height:1.55;margin:0}
+.nordl-section{padding:32px 0;scroll-margin-top:20px}
+.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;margin:0 0 22px}
+.section-heading h2,.partner-panel h2{font-size:clamp(1.7rem,3vw,2.35rem);letter-spacing:-.04em;margin:0;line-height:1.15}
+.section-heading>p{font-size:.92rem;max-width:40ch;color:var(--muted);line-height:1.6;margin:0}
+.platform-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.platform{display:flex;flex-direction:column;min-width:0;text-decoration:none;color:var(--ink);border:1px solid var(--edge);border-radius:17px;overflow:hidden;background:var(--shell);transition:border-color .2s,transform .2s}
+.platform:hover{border-color:var(--tone);transform:translateY(-3px)}
+.platform.leivro{--tone:#9dbaff;--art:#1a2944}.platform.stocks{--tone:#57e0bc;--art:#15342f}.platform.energy{--tone:#ffcc7d;--art:#332a1d}
+.platform-art{height:145px;display:flex;align-items:flex-start;justify-content:space-between;padding:18px;background:radial-gradient(ellipse at 85% 35%,var(--art),transparent 78%),#101c2c;color:var(--tone);gap:4px}
+.platform-art>span{font:600 .72rem/1.5 var(--mono);max-width:13ch;text-transform:uppercase;letter-spacing:.05em}
+.platform-art svg{height:112px;width:46%;max-width:146px;flex-shrink:0}
+.platform-body{padding:22px;display:flex;flex-direction:column;flex:1}
+.platform-title{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.platform-title h3{font-size:1.45rem;margin:0;letter-spacing:-.035em}
+.platform-title>span,.platform-link{color:var(--tone)}
+.platform-body p{font-size:.91rem;color:var(--muted);line-height:1.65;margin:12px 0 18px}
+.platform-tags{list-style:none;display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:auto 0 20px}
+.platform-tags li{font-size:.69rem;border:1px solid var(--edge);border-radius:5px;padding:5px 7px}
+.platform-link{font-size:.84rem;font-weight:600;border-top:1px solid var(--edge);padding-top:15px;display:flex;justify-content:space-between}
+.partner-panel{margin:26px 0 14px;padding:32px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:38px;border:1px solid var(--edge);border-radius:18px;background:linear-gradient(120deg,#142438,#101a29)}
+.partner-panel p:not(.section-kicker){font-size:.95rem;line-height:1.7;color:var(--muted);max-width:65ch;margin:18px 0 22px}
+.partner-topics{display:grid;gap:10px;align-content:center}
+.partner-topics>div{padding:14px 17px;border:1px solid var(--edge);background:#0d1725;border-radius:10px}
+.partner-topics strong,.partner-topics span{display:block;line-height:1.55}
+.partner-topics strong{font-size:.89rem}
+.partner-topics span{color:var(--muted);font-size:.8rem;margin-top:3px}
+.nordl-home .projects{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.nordl-home .project{animation:none;backdrop-filter:none;box-shadow:none;border-radius:16px;padding:22px}
+.nordl-home .project-head{flex-wrap:wrap}
+.nordl-home .services{backdrop-filter:none}
+.nordl-home .services-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.nordl-home .foot p{line-height:1.85;overflow-wrap:anywhere}
+.nordl-home a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(max-width:920px){.nordl-hero{gap:28px;padding:48px 0}.platform-grid{gap:12px}.platform-body{padding:17px}.platform-art{padding:14px}.nordl-home .links{gap:13px}}
+@media(max-width:740px){.nordl-home .page{width:calc(100% - 36px);padding-top:20px}.nordl-home .masthead{align-items:flex-start;flex-direction:column;gap:14px}.nordl-home .links{gap:12px 18px}.nordl-hero,.partner-panel{grid-template-columns:minmax(0,1fr);gap:22px}.nordl-hero{padding:42px 0 24px}.network-panel{max-width:490px;padding:16px}.section-heading{align-items:flex-start;flex-direction:column;gap:10px}.platform-grid{grid-template-columns:minmax(0,1fr);gap:14px}.platform-art{height:118px}.platform-art svg{height:90px}.platform-body{padding:20px}.partner-panel{padding:22px}.nordl-home .projects,.nordl-home .services-grid{grid-template-columns:minmax(0,1fr)}.nordl-home .services{padding:22px}.nordl-home .contact-alt{display:inline-block;margin:10px 0}.nordl-section{padding:24px 0}}
+@media(max-width:360px){.nordl-home .page{width:calc(100% - 28px)}.nordl-hero h1{font-size:2.35rem}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions a{text-align:center}.platform-title h3{font-size:1.25rem}}
+@media(prefers-reduced-motion:reduce){.nordl-home *{animation:none!important;transition:none!important}}
