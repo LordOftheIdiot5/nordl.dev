@@ -2,6 +2,8 @@
 
 The homepage. Static, no build step, published to GitHub Pages on push to `main`.
 
+**Living Nordl ecosystem and visitor-experience plan:** [GitHub issue #3](https://github.com/LordOftheIdiot5/nordl.dev/issues/3). Cross-platform review findings go there (not in the production UI), with product-specific implementation tracked separately in [Leivro #172](https://github.com/LordOftheIdiot5/models/issues/172), [Stockwatch #165](https://github.com/LordOftheIdiot5/stockwatch/issues/165) and [Energy WORKPLAN](https://github.com/LordOftheIdiot5/energy/blob/main/WORKPLAN.md). The live homepage already links all three platforms and includes a partnership CTA; the new plan tests their journeys rather than introducing misleading duplicates.
+
 The apex `nordl.dev` points here; projects live on subdomains, so one domain and
 one renewal covers everything rather than a name per idea.
 
